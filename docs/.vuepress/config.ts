@@ -21,6 +21,14 @@ export default defineUserConfig({
       },
       markdownEnhance: {
         revealJs: true
+      },
+      comment: {
+        provider: 'Giscus',
+        comment: true,
+        repo: 'w4ng3/web-course-docs',
+        repoId: 'R_kgDOMoXBWw',
+        category: 'General',
+        categoryId: 'DIC_kwDOMoXBW84Ch84-',
       }
     },
     // more...
