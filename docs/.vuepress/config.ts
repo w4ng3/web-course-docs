@@ -29,6 +29,7 @@ export default defineUserConfig({
         repoId: 'R_kgDOMoXBWw',
         category: 'General',
         categoryId: 'DIC_kwDOMoXBW84Ch84-',
+        mapping: 'title'
       }
     },
     // more...
