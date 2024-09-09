@@ -18,9 +18,10 @@
     "typescript": "^5.5.4",
     "vue": "^3.4.37",
     "vuepress": "2.0.0-rc.14",
-    "vuepress-theme-plume": "1.0.0-rc.85"
+    "vuepress-theme-plume": "1.0.0-rc.97"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.241"
+    "@iconify/json": "^2.2.241",
+    "@vuepress-plume/plugin-shikiji": "1.0.0-rc.97"
   }
 }

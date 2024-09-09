@@ -19,6 +19,7 @@ export default defineUserConfig({
     plugins: {
       search: {
       },
+      shiki: { twoslash: true },
       markdownEnhance: {
         revealJs: true
       },
