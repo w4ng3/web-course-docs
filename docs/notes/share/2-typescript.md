@@ -375,6 +375,30 @@ export interface CommonResponse<T> {
 > 重点掌握 `defineProps` 、`defineEmits`、`ref`、
 > `provide / inject `、`defineModel`、`defineExpose` 的 TypeScript 用法
 
+## 类型体操
+
+- [TS 类型挑战](https://blog.maxiaobo.com.cn/type-challenge/dist/)
+
+### 使用元组生成联合类型
+
+- 校验扑克牌
+
+  ```ts
+  const colors = ["♠", "♥", "♣", "♦"] as const;
+  // const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'] as const;
+
+  type Values = (typeof values)[number];
+  type Colors = (typeof colors)[number];
+
+  function createCard(value: Values, color: Colors) {
+    return {
+      value,
+      color,
+    };
+  }
+  // createCard("8", "♦");
+  ```
+
 ---
 
 - [TypeScript Deep Dive 中文](https://jkchao.github.io/typescript-book-chinese/)

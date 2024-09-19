@@ -6,9 +6,9 @@ config:
     full: true
     background: tint-plate
     hero:
-      name: Web front-end
-      tagline: system development
-      text: 文档&博客
+      name: Yak Shaving
+      tagline:
+      text: 生活在DOM树上—始终热爱"福报"...
       actions:
         - theme: brand
           text: Go →
