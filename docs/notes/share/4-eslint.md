@@ -2,6 +2,7 @@
 title: 我不要你觉得，我要我觉得!
 createTime: 2024/09/10 16:09:26
 permalink: /share/eslint/
+icon: vscode-icons:file-type-eslint
 ---
 
 ::: tip 团队开发如何规范代码格式

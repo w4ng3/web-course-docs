@@ -171,12 +171,15 @@ export default defineConfig({
 
 ## [CSS 图标](https://unocss.nodejs.cn/presets/icons)
 
+> [Icons in Pure CSS](https://antfu.me/posts/icons-in-pure-css)
+
 unocss 可以加入图标插件，
 例如安装 [carbon 图标](https://icones.js.org/collection/carbon)
 
 ```bash
-pnpm add -D @unocss/preset-icons @iconify-json/carbon
-
+pnpm add @unocss/preset-icons @iconify-json/carbon -D
+# 如果是monorepo项目
+pnpm add @unocss/preset-icons @iconify-json/carbon -wD
 ```
 
 ```ts
@@ -206,6 +209,13 @@ export default defineConfig({
 
 ::: tip
 试着在 vue 里用 unocss 写知乎热榜列表，尽量不在`<style>`里写样式。
+
+请遵循以下约定来使用图标 （unocss 里默认图标 prefix 是`i-`）
+
+- `<prefix><collection>-<icon>`
+- `<prefix><collection>:<icon>`
+
+![切换图标名称](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/202409201458076.png#pic_center =300x300)
 :::
 
 ## px2rem
@@ -295,14 +305,12 @@ Uno 的暗黑模式方案和 Tailwind 一样，[Tailwind CSS 推荐的暗模式]
    export function useDark() {
      /** 开启暗黑模式 */
      function enableDarkMode() {
-       // document.body.classList.add('dark-mode')
        document.documentElement.classList.toggle("dark", true);
        localStorage.setItem("color-scheme", "dark");
      }
 
      /** 关闭暗黑模式 */
      function disableDarkMode() {
-       // document.body.classList.remove('dark-mode')
        document.documentElement.classList.toggle("dark", false);
        localStorage.setItem("color-scheme", "light");
      }

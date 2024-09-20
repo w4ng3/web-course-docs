@@ -21,7 +21,11 @@ export default defineUserConfig({
       },
       shiki: { twoslash: true },
       markdownEnhance: {
-        revealJs: true
+        revealJs: true,
+        imgSize: true, // 启用图片大小
+        figure: true,  // 启用 figure 
+        imgLazyload: true, // 启用图片懒加载
+        imgMark: true, // 启用图片标记
       },
       comment: {
         provider: 'Giscus',
