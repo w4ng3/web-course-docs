@@ -190,17 +190,6 @@ pnpm add lint-staged simple-git-hooks --save-dev
 pnpm add lint-staged simple-git-hooks -wD
 ```
 
-运行指令，更新 hook
-
-```bash
-# [Optional] These 2 steps can be skipped for non-husky users
-git config core.hooksPath .git/hooks/
-rm -rf .git/hooks
-
-# Update ./git/hooks
-npx simple-git-hooks
-```
-
 2️⃣. 在`package.json`里添加钩子命令
 
 ```json
@@ -214,7 +203,18 @@ npx simple-git-hooks
 }
 ```
 
-3️⃣.写一些不规范的代码,测试效果
+3️⃣. 运行指令，更新 hook
+
+```bash
+# [Optional] These 2 steps can be skipped for non-husky users
+git config core.hooksPath .git/hooks/
+rm -rf .git/hooks
+
+# Update ./git/hooks
+npx simple-git-hooks
+```
+
+4️⃣.写一些不规范的代码,测试效果
 
 ![Img](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240818035304.png)
 
