@@ -8,7 +8,7 @@ config:
     hero:
       name: Yak Shaving
       tagline:
-      text: 生活在DOM树上—始终热爱"福报"...
+      text: 生活在DOM树上 — 始终热爱"福报"...
       actions:
         - theme: brand
           text: Go →
