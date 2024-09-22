@@ -4,7 +4,6 @@ icon: vscode-icons:file-type-unocss
 author: w4ng3
 createTime: 2024/08/26 23:56:30
 permalink: /share/unocss/
-draft: true
 ---
 
 ::: tip URL
@@ -369,3 +368,7 @@ Uno 的暗黑模式方案和 Tailwind 一样，[Tailwind CSS 推荐的暗模式]
      </div>
    </template>
    ```
+
+## 主题切换
+
+[Link](/blog/UnoCSS动态主题切换.md)
