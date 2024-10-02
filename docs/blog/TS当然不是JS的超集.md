@@ -1,6 +1,5 @@
 ---
 title: TS当然不是JS的超集
-author:
 createTime: 2024/09/05 21:35:26
 permalink: /article/TSisnotSuperJS/
 ---

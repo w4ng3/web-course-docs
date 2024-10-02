@@ -1,7 +1,6 @@
 ---
 title: Project A or B
 icon: devicon:pnpm-wordmark
-author: w4ng3
 tags:
   - share
 createTime: 2024/08/26 14:43:32

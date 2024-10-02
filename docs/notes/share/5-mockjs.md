@@ -2,7 +2,7 @@
 title: 以赝顶真
 createTime: 2024/09/23 22:33:38
 permalink: /share/mockjs/
-icon: logos:browserify-icon
+icon: logos:faker
 ---
 
 > 写前端却没有 api 提供数据，犹如抽悦刻没有烟油!!!

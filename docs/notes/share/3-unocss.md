@@ -1,7 +1,6 @@
 ---
 title: 原子人用原子类
 icon: vscode-icons:file-type-unocss
-author: w4ng3
 createTime: 2024/08/26 23:56:30
 permalink: /share/unocss/
 ---

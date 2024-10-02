@@ -1,7 +1,6 @@
 ---
 title: const 主 = 6 ？
 icon: "mdi:language-typescript"
-author: w4ng3
 createTime: 2024/08/11 23:14:58
 permalink: /share/typescript/
 ---

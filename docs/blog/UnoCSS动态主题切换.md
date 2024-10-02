@@ -1,6 +1,5 @@
 ---
 title: UnoCSS动态主题切换
-author: w4ng3
 icon: vscode-icons:file-type-unocss
 createTime: 2024/09/22 15:00:00
 permalink: /article/unocss-preset-theme/

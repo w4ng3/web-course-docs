@@ -55,6 +55,17 @@ export default defineUserConfig({
           ]
         },
         {
+          dir: 'widget',
+          link: '/widget/',
+          sidebar: [
+            {
+              text: '组件库实战',
+              icon: 'logos:vitejs',
+              items: 'auto'
+            }
+          ]
+        },
+        {
           dir: 'draft',
           link: '/draft/',
           sidebar: [
