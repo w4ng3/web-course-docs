@@ -7,7 +7,7 @@ draft: false
 
 单元测试是软件质量的重要保证。在 Github 上查看一个软件，单元测试覆盖率是评价软件成熟度的一个重要指标。通常成熟可靠的开源产品都有完善的单元测试，并且覆盖率可以达到 80% 以上。
 
-![img](./FILES/使用Jest进行前端单元测试.md/72a41c2b.png)
+![Vue的单元测试覆盖率](./FILES/使用Jest进行前端单元测试.md/72a41c2b.png)
 
 单元测试之所以这么重要，有以下三方面原因：
 
@@ -27,13 +27,11 @@ draft: false
 
 下面这张图截取自 Vue 项目的 PR 列表，绿色的对钩就是表示通过的单元测试。这样代码的所有者只需要判断这个提交是否有意义就可以了，无需过多考虑对以前代码的影响。
 
-![img](./FILES/使用Jest进行前端单元测试.md/e8e6466e.png)
-
-关于如何在 CI 中配置自动运行单元测试，会在后续的章节中介绍。本节主要介绍单元测试的基础部分，目的是学会**如何使用 Jest 来进行前端项目的测试**，为后面的实战做好准备。
+![Vue的PR列表](./FILES/使用Jest进行前端单元测试.md/e8e6466e.png)
 
 ## User Story
 
-使用 Jest 完成对一个前端页面的测试。
+使用 [Jest](https://jestjs.io/zh-Hans/) 完成对一个前端页面的测试。
 
 ## 任务分解(Task)
 
@@ -113,6 +111,27 @@ describe("测试Add函数", () => {
 
 ![img](./FILES/使用Jest进行前端单元测试.md/05fc0137.png)
 
+`jest`有许多断言 api 有很多，详情应查看[文档](https://jestjs.io/zh-Hans/docs/expect)，下面列举一部分。
+
+```js
+toBe()：绝对相等（===）
+toEqual()：简单类型绝对匹配；复杂类型内容结果的匹配
+toBeNull()：匹配null
+toBeUndefined()：匹配undefined
+toBeDefined()：匹配非undefined
+toBeTruthy()：匹配转化后为true
+toBeFalsy()：匹配转化后为false
+toBeGreaterThan()：相当于大于号
+toBeLessThan()：相当于小于号
+toBeGreaterThanOrEqual()：相当于大于等于号
+toBeLessThanOrEqual()：相当于大于等于号
+toBeCloseTo()：解决js浮点错误
+toMatch(regExp/string)：用正则表达式或者字符串匹配字符串片段
+toContain()：匹配数组或者Set中的某一项
+toThrow()：匹配异常处理，如果抛出了异常就过测试用例
+...
+```
+
 ### 用 Mock 模拟无法执行的函数
 
 如果被测试的代码调用了一个网络请求 API ，比如 Axios，但是那个网络地址并不存在或者没有联网，这个时候应该如何测试呢？
@@ -145,7 +164,7 @@ jest.mock("axios");
 it("fetch", async () => {
   // 模拟第一次接收到的数据
   axios.get.mockResolvedValueOnce("123");
-  // 模拟每一次接收到的数据
+  // 模拟每二次接收到的数据
   axios.get.mockResolvedValue("456");
   const data1 = await getData();
   const data2 = await getData();
@@ -190,7 +209,7 @@ pnpm i jsdom -D
 src 下新建 jsdom-config.js，用于在 jest 中引入 jsdom
 
 ```javascript
-const jsdom = require("jsdom"); // eslint-disable-line
+const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 const dom = new JSDOM("<!DOCTYPE html><head/><body></body>", {
@@ -248,3 +267,25 @@ describe("Dom测试", () => {
 - 断言、分组都是什么？
 - Mock 函数的使用场景是什么？
 - 如何使用 DOM 仿真进行前端测试？
+
+## 拓展
+
+上面的示例都是用的 js 代码，且使用的是默认的 CommonJS，如果要在开发中引入更好的规范和智能提示，可以添加`ESM支持`、`ESLint`、`TypeScript`、`路径映射`...等，可以自己试试，参考这些文档
+
+- [jest 快速开始：使用 TypeScript](https://jestjs.io/zh-Hans/docs/getting-started#%E4%BD%BF%E7%94%A8-typescript)
+- [TS-JEST:ESM 支持](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support)
+- [ESLint: 预定义的全局变量](https://eslint.org/docs/latest/use/configure/language-options#predefined-global-variables)
+- [TS-JEST:路径映射](https://kulshekhar.github.io/ts-jest/docs/getting-started/paths-mapping)
+
+::: tip Jest 的 ESM 支持
+如果只是 js 文件的 esm 支持，简单改下运行脚本就行了
+
+```json
+{
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  }
+}
+```
+
+:::

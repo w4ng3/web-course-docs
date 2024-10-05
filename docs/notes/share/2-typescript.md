@@ -106,6 +106,7 @@ TypeScript 项目的配置文件，通常在项目的根目录
   "compilerOptions": {
     "target": "es2016", // 指定编译产物的 JS 版本
     "module": "ESNext", // 指定生成什么模块代码
+    "moduleResolution": "bundler", // 指定TypeScript如何从给定的模块说明符中查找文件
     "forceConsistentCasingInFileNames": true, // 确保导入时的大小写正确
     "strict": true, // 启用所有严格类型检查选项。
     "skipLibCheck": true, // 跳过库检查

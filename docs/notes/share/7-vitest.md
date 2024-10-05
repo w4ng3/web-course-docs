@@ -49,4 +49,135 @@ icon: logos:vitest
    }
    ```
 
-3. 3
+3. 按照 Vitest 文档[编写测试](https://cn.vitest.dev/guide/#编写测试)，效果如下图：
+
+   ![运行Vitest](./FILES/41548a78/img-20241004032906.png)
+
+   Vitest 也提供了一个[VSCode 插件](https://cn.vitest.dev/guide/ide.html)，可以方便定位那些地方写了测试方法，可一键启动测试，但我自己使用下来的体验一般，有缓存 bug，经常要手动刷新，不如直接运行命令稳定。
+
+## Vue 应用测试
+
+安装[@vue/test-utils](https://test-utils.vuejs.org/)
+
+```bash
+pnpm add --save-dev @vue/test-utils
+```
+
+配置 vite.config
+
+```ts{1,6}
+/// <reference types="vitest/config" />
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  test: {
+    environment: "jsdom",
+  },
+});
+```
+
+### 测试组合式函数
+
+::: code-tabs
+@tab counter.ts
+
+```ts
+import { ref } from "vue";
+
+export function useCounter(initial: number = 0) {
+  const count = ref(initial);
+  const inc = () => count.value++;
+  const dec = () => count.value--;
+
+  return {
+    count,
+    inc,
+    dec,
+  };
+}
+```
+
+@tab counter.test.ts
+
+```ts
+import { expect, test } from "vitest";
+import { useCounter } from "../counter";
+
+test("useCounter", () => {
+  const { count, inc, dec } = useCounter();
+  expect(count.value).toBe(0);
+  inc();
+  expect(count.value).toBe(1);
+  dec();
+  expect(count.value).toBe(0);
+});
+```
+
+:::
+
+### 测试组件
+
+::: code-tabs
+@tab TheCounter.vue
+
+```vue
+<script setup lang="ts">
+import { useCounter } from "@/composables/counter";
+
+const props = defineProps<{
+  initial: number;
+}>();
+
+const { count, inc, dec } = useCounter(props.initial);
+</script>
+
+<template>
+  <div>
+    {{ count }}
+    <button class="inc" @click="inc()">+</button>
+    <button class="dec" @click="dec()">-</button>
+  </div>
+</template>
+```
+
+@tab TheCounter.test.ts
+
+```ts
+import { mount } from "@vue/test-utils";
+import { describe, expect, test } from "vitest";
+import TheCounter from "../TheCounter.vue";
+
+describe("component TheCounter.vue", () => {
+  test("should render", () => {
+    const wrapper = mount(TheCounter, { props: { initial: 10 } });
+    expect(wrapper.text()).toContain("10");
+    // 期望：快照 https://vitest.vuejs.ac.cn/api/expect#tomatchsnapshot
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  test("should be interactive", async () => {
+    const wrapper = mount(TheCounter, { props: { initial: 0 } });
+    expect(wrapper.text()).toContain("0");
+
+    // 存在具有特定css类的元素
+    expect(wrapper.find(".inc").exists()).toBe(true);
+    expect(wrapper.find(".dec").exists()).toBe(true);
+
+    await wrapper.get(".inc").trigger("click");
+
+    expect(wrapper.text()).toContain("1");
+
+    await wrapper.get(".dec").trigger("click");
+
+    expect(wrapper.text()).toContain("0");
+  });
+});
+```
+
+:::
+
+### 测试 Provide/inject
+
+这部分自己查看 vue 官方示例吧
+
+- [Vue.js:测试组合式函数](https://cn.vuejs.org/guide/scaling-up/testing#testing-composables)
