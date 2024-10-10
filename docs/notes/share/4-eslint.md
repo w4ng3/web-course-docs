@@ -126,6 +126,10 @@ export default antfu({
 
   // 取消 Anthony 喜好的一些固执己见的规则。
   lessOpinionated: true,
+  formatters: {
+    css: true,
+    html: true,
+  },
   // 覆盖规则
   rules: {
     "style/no-multiple-empty-lines": ["error", { max: 2 }], // 最大空行
@@ -217,6 +221,6 @@ npx simple-git-hooks
 
 4️⃣.写一些不规范的代码,测试效果
 
-![Img](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240818035304.png)
+![](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240818035304.png)
 
 检查暂存区的文件，ESLint 修复不通过则 commit 失败

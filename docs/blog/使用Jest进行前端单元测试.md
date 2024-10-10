@@ -109,7 +109,7 @@ describe("测试Add函数", () => {
 
 接下来在项目根目录执行 `pnpm jest`命令运行测试，Jest 会自动运行本软件包下的所有测试用例。
 
-![img](./FILES/使用Jest进行前端单元测试.md/05fc0137.png)
+![](./FILES/使用Jest进行前端单元测试.md/05fc0137.png)
 
 `jest`有许多断言 api 有很多，详情应查看[文档](https://jestjs.io/zh-Hans/docs/expect)，下面列举一部分。
 
@@ -181,7 +181,7 @@ pnpm i axios
 
 再次运行 Jest，两个测试均通过了。
 
-![img](./FILES/使用Jest进行前端单元测试.md/d860b60b.png)
+![](./FILES/使用Jest进行前端单元测试.md/d860b60b.png)
 
 **Mock 函数的作用，就是为了有效孤立函数，实现真正的单元测试。**
 
@@ -252,7 +252,7 @@ describe("Dom测试", () => {
 
 再次运行测试，全部通过
 
-![img](./FILES/使用Jest进行前端单元测试.md/6ee39941.png)
+![](./FILES/使用Jest进行前端单元测试.md/6ee39941.png)
 
 这就是 DOM 测试，前端常用的 Vue 、React 程序也都可以使用这样的方法进行测试。
 

@@ -21,7 +21,7 @@ permalink: /share/monorepo/
 
 项目管理模式发展到现在，先后有三种项目管理模式的历史进程：
 
-![Img](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240727154311.png)
+![](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240727154311.png)
 
 ### Monolithic（单体应用）开发模式
 
@@ -154,7 +154,7 @@ git init
 touch .gitignore
 ```
 
-```git
+```
 <!-- .gitignore -->
 node_modules/
 dist
@@ -270,7 +270,7 @@ ts 文件无法识别 js 文件类型，需在 vite-env.d.ts 里声明
 declare module "@w4ng3/tools";
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240728174948.png)
+![](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240728174948.png)
 
 > 拓展：添加公共组件 components ，vue 跨项目共享
 

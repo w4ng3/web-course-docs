@@ -153,7 +153,7 @@ DPZ.say(主);
 
 将`a.js`改成`a.ts`文件，根据编辑器提示加上类型推断
 
-![Img](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240801132605.png)
+![](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240801132605.png)
 
 这样就能在编译阶段发现错误了。
 
@@ -197,7 +197,7 @@ class Person {
 
 另一种是定义 TS 类型
 
-![Img](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240801135956.png)
+![](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/yank-note-picgo-img-20240801135956.png)
 这样在赋值时编辑器还会给出提示
 
 ### 给 js 文件生成类型

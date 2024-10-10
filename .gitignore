@@ -3,4 +3,9 @@ dist
 .temp
 .cache
 draft
+# /docs/notes/draft/*.md
+# /docs/notes/draft/widget/*
+# !/docs/notes/draft/widget/11.md
 .DS_Store
+
+
