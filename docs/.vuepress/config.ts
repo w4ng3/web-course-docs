@@ -16,6 +16,14 @@ export default defineUserConfig({
     "@Hooks": path.resolve(__dirname, "hooks"),
   },
   theme: plumeTheme({
+    navbar: [
+      { text: '主题分享', link: '/share/monorepo/' },
+      { text: '博客', link: '/blog/' },
+      // { text: '组件库实战', link: '/widget/' },
+      { text: '归档', link: '/blog/archives/' },
+      // { text: '标签', link: '/blog/tags/' },
+      { text: '', link: '' }
+    ],
     plugins: {
       search: {
       },

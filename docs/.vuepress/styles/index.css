@@ -1,0 +1,13 @@
+:root {
+  --vp-c-brand-1: #5086a1;
+}
+
+.hero-name {
+  scale: 1.6;
+}
+
+.vp-button.medium {
+  padding: 10px 40px !important;
+  font-size: 28px !important;
+  border-radius: 40px !important;
+}
