@@ -2,10 +2,13 @@ node_modules
 dist
 .temp
 .cache
-draft
-# /docs/notes/draft/*.md
-# /docs/notes/draft/widget/*
-# !/docs/notes/draft/widget/11.md
+# draft
+/docs/notes/draft/*.md
+/docs/notes/draft/widget/*
+!/docs/notes/draft/widget/18.md
 .DS_Store
 
 
+docs/notes/widget/[5-9].md
+docs/notes/widget/1[0-9].md
+docs/notes/widget/20.md
