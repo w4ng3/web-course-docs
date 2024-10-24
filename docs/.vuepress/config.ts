@@ -88,10 +88,10 @@ export default defineUserConfig({
     },
 
 
-    // footer: {
-    //   message: '...',
-    //   copyright: ''
-    // }
+    footer: {
+      message: '',
+      copyright: ''
+    }
   }),
   bundler: viteBundler(),
 })
