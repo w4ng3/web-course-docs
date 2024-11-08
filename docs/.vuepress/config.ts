@@ -27,6 +27,9 @@ export default defineUserConfig({
     plugins: {
       search: {
       },
+      markdownPower: {
+        bilibili: true,
+      },
       shiki: { twoslash: true },
       markdownEnhance: {
         revealJs: true,
@@ -88,10 +91,10 @@ export default defineUserConfig({
     },
 
 
-    footer: {
-      message: '',
-      copyright: ''
-    }
+    // footer: {
+    //   message: '',
+    //   copyright: ''
+    // }
   }),
   bundler: viteBundler(),
 })
