@@ -22,7 +22,6 @@ export default defineUserConfig({
       { text: '组件库实战', link: '/widget/' },
       { text: '归档', link: '/blog/archives/' },
       // { text: '标签', link: '/blog/tags/' },
-      { text: '', link: '' }
     ],
     plugins: {
       search: {
