@@ -129,7 +129,7 @@ export function showMsg(options: MessageBoxOptions) {
 
 :::
 
-导出一个`showMsg`方法，创建一个 div，讲 `MessageBox`组件挂载上去，点击后卸载。
+导出一个`showMsg`方法，创建一个 div，将 `MessageBox`组件挂载上去，点击后卸载。
 
 调用方式如下：
 
